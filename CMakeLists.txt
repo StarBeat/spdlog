@@ -55,6 +55,7 @@ endif()
 
 option(SPDLOG_BUILD_ALL "Build all artifacts" OFF)
 
+
 # build shared option
 option(SPDLOG_BUILD_SHARED "Build shared library" OFF)
 
@@ -233,6 +234,7 @@ endif()
 # ---------------------------------------------------------------------------------------
 if(SPDLOG_BUILD_EXAMPLE OR SPDLOG_BUILD_EXAMPLE_HO OR SPDLOG_BUILD_ALL)
     message(STATUS "Generating example(s)")
+    add_subdirectory(csbinding)
     add_subdirectory(example)
     spdlog_enable_warnings(example)
     if(SPDLOG_BUILD_EXAMPLE_HO)
